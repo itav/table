@@ -1,0 +1,22 @@
+{
+    "name": "itav/table",
+    "authors": [
+        {
+            "name": "Sylwester Kowalski",
+            "email": "sylwester7799@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "require-dev": {
+        "itav/serializer": "dev-master",
+        "symfony/templating": "^3.0",
+        "twig/twig": "^1.24"
+    },    
+    "autoload": {
+        "psr-4": {
+            "Itav\\Component\\Table\\": "src/"
+        }
+    }
+}
