@@ -2,17 +2,16 @@
 
 namespace Itav\Component\Table;
 
-class Table extends TableElement implements TableElementInterface, TableInterface
+class Tfoot extends TableElement implements TableElementInterface, TableInterface
 {
     /**
      * @var TableElementInterface[]
      */
     private $elements = [];
 
-
     public function __construct()
     {
-        $this->template = 'table.twig';
+        $this->template = 'tfoot.twig';
     }
 
     public function getElements()

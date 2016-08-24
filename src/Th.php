@@ -2,19 +2,19 @@
 
 namespace Itav\Component\Table;
 
-class Action
+class Th extends TableElement
 {
-    protected $label;
-    protected $link;
-    protected $on;
+    protected $colspan;
+    protected $rowspan;
+    protected $content;
 
 
     public function __construct($content = null)
     {
         $this->content = $content;
-        $this->template = 'td.tpl';
+        $this->template = 'th.twig';
     }
-    
+
     function getColspan()
     {
         return $this->colspan;

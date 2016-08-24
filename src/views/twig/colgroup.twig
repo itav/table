@@ -1,0 +1,6 @@
+<colgroup {% if data.span %} span="{{ data.span }}" {% endif %} {{ include('tableelement.twig') }} >
+    {% for element in data.elements %}
+        {{ include(element.template, {data: element}, with_context = false) }}
+    {% endfor %}
+</colgroup>
+

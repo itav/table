@@ -2,17 +2,17 @@
 
 namespace Itav\Component\Table;
 
-class Table extends TableElement implements TableElementInterface, TableInterface
+class Colgroup extends TableElement implements TableInterface, TableElementInterface
 {
+    private $span;
     /**
      * @var TableElementInterface[]
      */
     private $elements = [];
 
-
     public function __construct()
     {
-        $this->template = 'table.twig';
+        $this->template = 'colgroup.twig';
     }
 
     public function getElements()
@@ -45,4 +45,24 @@ class Table extends TableElement implements TableElementInterface, TableInterfac
         $this->elements = $elements;
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getSpan()
+    {
+        return $this->span;
+    }
+
+    /**
+     * @param mixed $span
+     * @return Colgroup
+     */
+    public function setSpan($span)
+    {
+        $this->span = $span;
+        return $this;
+    }
+
+
 }

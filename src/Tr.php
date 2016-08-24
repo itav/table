@@ -2,48 +2,53 @@
 
 namespace Itav\Component\Table;
 
-class Tr extends TableElement
+class Tr extends TableElement implements TableElementInterface, TableInterface
 {
     protected $colspan;
     protected $rowspan;
     protected $content;
-    protected $elements = [];
-    
+    /**
+     * @var TableElementInterface[]
+     */
+    private $elements = [];
+
     public function __construct($elements = [])
     {
-        $this->template = 'tr.tpl';
+        $this->template = 'tr.twig';
         $this->setElements($elements);
     }
 
-    public function getElements() {
+    public function getElements()
+    {
         return $this->elements;
     }
 
-    public function addElement($element) {
+    public function addElement($element)
+    {
         $this->elements[] = $element;
         return $this;
     }
-    
+
     public function delElement($index)
     {
-        if (array_key_exists($index, $this->elements)){
+        if (array_key_exists($index, $this->elements)) {
             unset($this->elements[$index]);
         }
         return $this;
-    }    
-    
+    }
+
     public function reindexElements()
     {
         $this->elements = array_values($this->elements);
-    }    
+    }
 
-    public function setElements(array $elements) {
+    public function setElements($elements)
+    {
         $this->elements = $elements;
         return $this;
     }
 
 
-    
     function getColspan()
     {
         return $this->colspan;
@@ -76,6 +81,6 @@ class Tr extends TableElement
         $this->content = $content;
         return $this;
     }
-    
-    
+
+
 }

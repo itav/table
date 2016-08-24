@@ -12,9 +12,9 @@ class Td extends TableElement
     public function __construct($content = null)
     {
         $this->content = $content;
-        $this->template = 'td.tpl';
+        $this->template = 'td.twig';
     }
-    
+
     function getColspan()
     {
         return $this->colspan;
