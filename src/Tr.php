@@ -2,13 +2,13 @@
 
 namespace Itav\Component\Table;
 
-class Tr extends TableElement implements TableElementInterface, TableInterface
+class Tr extends TableElement implements TableElementInterface, RowInterface
 {
     protected $colspan;
     protected $rowspan;
     protected $content;
     /**
-     * @var TableElementInterface[]
+     * @var CellInterface[]
      */
     private $elements = [];
 
@@ -23,7 +23,7 @@ class Tr extends TableElement implements TableElementInterface, TableInterface
         return $this->elements;
     }
 
-    public function addElement($element)
+    public function addElement(CellInterface $element)
     {
         $this->elements[] = $element;
         return $this;
@@ -42,7 +42,7 @@ class Tr extends TableElement implements TableElementInterface, TableInterface
         $this->elements = array_values($this->elements);
     }
 
-    public function setElements($elements)
+    public function setElements(array $elements)
     {
         $this->elements = $elements;
         return $this;

@@ -3,22 +3,30 @@
 namespace Itav\Component\Table;
 
 
+/**
+ * Interface for elements like: Table
+ *
+ * Interface TableInterface
+ * @package Itav\Component\Table
+ */
 interface TableInterface
 {
     /**
-     * @return TableElementInterface[]
+     * @return TestInterface[]
      */
     public function getElements();
 
     /**
-     * @param TableElementInterface $element
+     * arguments: section or row
+     *
+     * @param TestInterface $element
      * @return self
      */
-    public function addElement($element);
+    public function addElement(TestInterface $element);
 
     /**
-     * @param TableElementInterface[] $elements
+     * @param TestInterface[] $elements
      * @return self
      */
-    public function setElements($elements);
+    public function setElements(array $elements);
 }

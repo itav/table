@@ -2,7 +2,7 @@
 
 namespace Itav\Component\Table;
 
-class Td extends TableElement
+class Td extends TableElement implements CellInterface
 {
     protected $colspan;
     protected $rowspan;
@@ -15,38 +15,58 @@ class Td extends TableElement
         $this->template = 'td.twig';
     }
 
-    function getColspan()
+    /**
+     * @return mixed
+     */
+    public function getColspan()
     {
         return $this->colspan;
     }
 
-    function getRowspan()
-    {
-        return $this->rowspan;
-    }
-
-    function setColspan($colspan)
+    /**
+     * @param mixed $colspan
+     * @return Td
+     */
+    public function setColspan($colspan)
     {
         $this->colspan = $colspan;
         return $this;
     }
 
-    function setRowspan($rowspan)
+    /**
+     * @return mixed
+     */
+    public function getRowspan()
+    {
+        return $this->rowspan;
+    }
+
+    /**
+     * @param mixed $rowspan
+     * @return Td
+     */
+    public function setRowspan($rowspan)
     {
         $this->rowspan = $rowspan;
         return $this;
     }
 
-    function getContent()
+    /**
+     * @return null
+     */
+    public function getContent()
     {
         return $this->content;
     }
 
-    function setContent($content)
+    /**
+     * @param null $content
+     * @return Td
+     */
+    public function setContent($content)
     {
         $this->content = $content;
         return $this;
     }
-
 
 }

@@ -2,10 +2,10 @@
 
 namespace Itav\Component\Table;
 
-class Tbody extends TableElement implements TableElementInterface, TableInterface
+class Tbody extends TableElement implements TableElementInterface, SectionInterface
 {
     /**
-     * @var TableElementInterface[]
+     * @var RowInterface[]
      */
     private $elements;
 
@@ -19,7 +19,7 @@ class Tbody extends TableElement implements TableElementInterface, TableInterfac
         return $this->elements;
     }
 
-    public function addElement($element)
+    public function addElement(RowInterface $element)
     {
         $this->elements[] = $element;
         return $this;
@@ -39,7 +39,7 @@ class Tbody extends TableElement implements TableElementInterface, TableInterfac
         $this->elements = array_values($this->elements);
     }
 
-    public function setElements($elements)
+    public function setElements(array $elements)
     {
         $this->elements = $elements;
         return $this;

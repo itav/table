@@ -6,7 +6,7 @@ class Colgroup extends TableElement implements TableInterface, TableElementInter
 {
     private $span;
     /**
-     * @var TableElementInterface[]
+     * @var Col[]
      */
     private $elements = [];
 
